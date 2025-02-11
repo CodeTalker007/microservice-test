@@ -131,7 +131,7 @@ $app->singleton(Illuminate\Validation\Factory::class, function ($app) {
     $validator->setPresenceVerifier(new DatabasePresenceVerifier($app->make('db')));
     return $validator;
 });
-
+$app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->configure('auth');
 $app->configure('database');
 
